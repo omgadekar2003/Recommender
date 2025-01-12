@@ -9,7 +9,7 @@ model = joblib.load("predict.pkl")
 symptoms_data = pd.read_csv("symtoms_df.csv")
 descriptions_data = pd.read_csv("description.csv")
 precautions_data = pd.read_csv("precautions_df.csv")
-diets_data = pd.read_csv("diets.csv")
+diets_data = pd.read_csv("diets.csv") 
 
 # Helper function to get recommendations
 def get_recommendations(predicted_disease):
