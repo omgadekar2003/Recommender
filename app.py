@@ -38,7 +38,7 @@ st.title("Health Prediction App")
 st.write("Please enter your symptoms to predict the health condition.")
 
 # Display the symptoms for user selection
-symptoms = symptoms_data["Symptom"].tolist()
+symptoms = symptoms_data['Symptom_1','Symptom_2','Symptom_3','Symptom_4'].tolist()
 selected_symptoms = st.multiselect("Select Symptoms", symptoms)
 
 # Convert the selected symptoms to a one-hot encoded vector
