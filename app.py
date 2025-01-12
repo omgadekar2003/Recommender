@@ -16,7 +16,7 @@ workout = pd.read_csv("workout_df.csv")
 # Extract all unique symptoms from the symptoms table
 symptom_columns = ['Symptom_1', 'Symptom_2', 'Symptom_3', 'Symptom_4']
 all_symptoms = symptoms_data[symptom_columns].values.flatten()  # Flatten the symptom columns
-unique_symptoms = pd.Series(all_symptoms).dropna().unique().tolist()  # Remove duplicates and NaNs
+unique_symptoms = pd.Series(all_symptoms).dropna().tolist()  # Remove duplicates and NaNs
 
 # Helper function to retrieve details based on the predicted disease
 def helper(dis):
