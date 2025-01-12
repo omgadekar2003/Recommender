@@ -11,7 +11,7 @@ symptoms_data = pd.read_csv("symtoms_df.csv")
 descriptions_data = pd.read_csv("description.csv")
 precautions_data = pd.read_csv("precautions_df.csv")
 diets_data = pd.read_csv("diets.csv")
-workout = pd.read_csv("datasets/workout_df.csv")
+workout = pd.read_csv("workout_df.csv")
 
 # Streamlit user interface
 st.title("Health Prediction App")
