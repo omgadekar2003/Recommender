@@ -13,6 +13,11 @@ precautions = pd.read_csv("precautions_df.csv")
 diets = pd.read_csv("diets.csv")
 workout = pd.read_csv("workout_df.csv")
 
+# Extract all unique symptoms from the symptoms table
+symptom_columns = ['Symptom_1', 'Symptom_2', 'Symptom_3', 'Symptom_4']
+all_symptoms = symptoms_data[symptom_columns].values.flatten()  # Flatten the symptom columns
+unique_symptoms = pd.Series(all_symptoms).dropna().unique().tolist()  # Remove duplicates and NaNs
+
 # Helper function to retrieve details based on the predicted disease
 def helper(dis):
     # Extract description
@@ -38,14 +43,13 @@ st.title("Health Prediction App")
 st.write("Please enter your symptoms to predict the health condition.")
 
 # Display the symptoms for user selection
-symptoms = symptoms_data['Symptom_1','Symptom_2','Symptom_3','Symptom_4'].tolist()
-selected_symptoms = st.multiselect("Select Symptoms", symptoms)
+selected_symptoms = st.multiselect("Select Symptoms", unique_symptoms)
 
 # Convert the selected symptoms to a one-hot encoded vector
-symptom_vector = np.zeros(len(symptoms))
+symptom_vector = np.zeros(len(unique_symptoms))
 for symptom in selected_symptoms:
-    if symptom in symptoms:
-        symptom_index = symptoms.index(symptom)
+    if symptom in unique_symptoms:
+        symptom_index = unique_symptoms.index(symptom)
         symptom_vector[symptom_index] = 1
 
 # Perform prediction using the model
