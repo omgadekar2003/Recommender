@@ -198,7 +198,7 @@ import pandas as pd
 import streamlit as st
 
 # Load the trained model
-model = joblib.load("predict.pkl")
+model = joblib.load("predict_.pkl")
 
 # Feature names extracted during model training
 # Replace this list with the actual feature names from your model
