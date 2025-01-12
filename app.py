@@ -25,21 +25,17 @@ diseases_list = {15: 'Fungal infection', 4: 'Allergy', 16: 'GERD', 9: 'Chronic c
 
 # Custom helper function
 def helper(dis):
-    # Assuming you have your dataframes like 'description', 'precautions', 'medications', etc. available
-    # These would need to be defined or loaded with real data in your project
-    desc = description[description['Disease'] == dis]['Description']
-    desc = " ".join([w for w in desc])
+    desc = description[description['Disease'] == dis]['Description'].values[0]
 
-    pre = precautions[precautions['Disease'] == dis][['Precaution_1', 'Precaution_2', 'Precaution_3', 'Precaution_4']]
-    pre = [col for col in pre.values]
+    pre = precautions[precautions['Disease'] == dis][
+        ['Precaution_1', 'Precaution_2', 'Precaution_3', 'Precaution_4']
+    ].values.flatten().tolist()
 
-    med = medications[medications['Disease'] == dis]['Medication']
-    med = [med for med in med.values]
+    med = medications[medications['Disease'] == dis]['Medication'].values.tolist()
 
-    die = diets[diets['Disease'] == dis]['Diet']
-    die = [die for die in die.values]
+    die = diets[diets['Disease'] == dis]['Diet'].values.tolist()
 
-    wrkout = workout[workout['disease'] == dis] ['workout']
+    wrkout = workout[workout['disease'] == dis]['workout'].values.tolist()
 
     return desc, pre, med, die, wrkout
 
@@ -53,45 +49,66 @@ def get_predicted_value(patient_symptoms):
     return disease_name
 
 # Streamlit app UI
-st.title("Disease Prediction System")
-st.write("Enter your symptoms to predict the likely disease.")
+st.title("🌟 MediLink")
+st.write("🩺 **A Smart Health Diagnosis Tool**")
+st.write(
+    """
+    Welcome to the Disease Prediction System! Enter your symptoms, and this AI-powered tool will predict the most likely disease.
+    We’ll also provide detailed descriptions, precautions, medications, dietary recommendations, and workout suggestions tailored to your diagnosis.
+    """
+)
 
 # Multi-select dropdown for symptom input
 user_symptoms = st.multiselect(
-    "Select your symptoms from the list:",
+    "🤒 Select your symptoms from the list:",
     symptoms_dict.keys(),
     help="Select one or more symptoms you are experiencing."
 )
 
-if st.button("Predict Disease"):
+if st.button("🩺 Predict Disease"):
     if not user_symptoms:
-        st.warning("Please select at least one symptom to proceed.")
+        st.warning("⚠️ Please select at least one symptom to proceed.")
     else:
         # Get prediction
         predicted_disease = get_predicted_value(user_symptoms)
-        
+
         # Display predicted disease
-        st.success(f"The predicted disease is: {predicted_disease}")
-        
-        # Display additional info
+        st.success(f"🩺 The predicted disease is: **{predicted_disease}**")
+
+        # Fetch additional info
         description, precautions, medications, diet, workout = helper(predicted_disease)
-        
-        st.subheader("Description")
-        st.write(description)
-        
-        st.subheader("Precautions")
-        st.write(precautions)
-        
-        st.subheader("Medications")
-        st.write(medications)
-        
-        st.subheader("Diet")
-        st.write(diet)
-        
-        st.subheader("Recommended Workouts")
-        st.write(workout)
 
+        # Display additional info
+        st.subheader("📄 Description")
+        st.write(f"📝 {description}")
 
+        st.subheader("🚨 Precautions")
+        for idx, pre in enumerate(precautions, 1):
+            st.write(f"✔️ {idx}. {pre}")
+
+        st.subheader("💊 Medications")
+        for med in medications:
+            st.write(f"🩹 {med}")
+        st.markdown(
+            "<p style='color:red;'><b>Before taking this medicine, please visit the clinic or hospital. Thank you.</b></p>",
+            unsafe_allow_html=True
+        )
+
+        st.subheader("🥗 Recommended Diet")
+        for item in diet:
+            st.write(f"🍎 {item}")
+
+        st.subheader("🏋️ Recommended Workouts")
+        for activity in workout:
+            st.write(f"🏃 {activity}")
+
+# Footer with Developer info
+st.markdown("---")
+st.write("🔧 Developed by **Om Gadekar**")
+st.markdown(
+    "<p style='color:gray; text-align:center;'>Powered by AI & Streamlit | Icons and Design by Om Gadekar</p>",
+    unsafe_allow_html=True
+)
 
 
 
