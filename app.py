@@ -8,10 +8,30 @@ model = joblib.load("predict_.pkl")
 
 # File paths for additional data files
 symptoms_data = pd.read_csv("symtoms_df.csv")
-descriptions_data = pd.read_csv("description.csv")
-precautions_data = pd.read_csv("precautions_df.csv")
-diets_data = pd.read_csv("diets.csv")
+description = pd.read_csv("description.csv")
+precautions = pd.read_csv("precautions_df.csv")
+diets = pd.read_csv("diets.csv")
 workout = pd.read_csv("workout_df.csv")
+
+# Helper function to retrieve details based on the predicted disease
+def helper(dis):
+    # Extract description
+    desc = description[description['Disease'] == dis]['Description'].values
+    desc = " ".join([str(w) for w in desc])
+    
+    # Extract precautions
+    pre = precautions[precautions['Disease'] == dis][['Precaution_1', 'Precaution_2', 'Precaution_3', 'Precaution_4']]
+    pre = pre.values.flatten().tolist()
+    
+    # Extract diet
+    diet = diets[diets['Disease'] == dis]['Diet'].values
+    diet = " ".join([str(w) for w in diet])
+    
+    # Extract workout plan
+    work = workout[workout['Disease'] == dis]['Workout'].values
+    work = " ".join([str(w) for w in work])
+    
+    return desc, pre, diet, work
 
 # Streamlit user interface
 st.title("Health Prediction App")
@@ -24,33 +44,30 @@ selected_symptoms = st.multiselect("Select Symptoms", symptoms)
 # Convert the selected symptoms to a one-hot encoded vector
 symptom_vector = np.zeros(len(symptoms))
 for symptom in selected_symptoms:
-    symptom_index = symptoms.index(symptom)
-    symptom_vector[symptom_index] = 1
+    if symptom in symptoms:
+        symptom_index = symptoms.index(symptom)
+        symptom_vector[symptom_index] = 1
 
 # Perform prediction using the model
-prediction = model.predict([symptom_vector])
-
-# Display the prediction result
-if prediction[0] == 1:
-    st.write("Prediction: You might have Disease A.")
-    description = descriptions_data[descriptions_data["Disease"] == "Disease A"]["Description"].values[0]
-    precaution = precautions_data[precautions_data["Disease"] == "Disease A"]["Precaution"].values[0]
-    diet = diets_data[diets_data["Disease"] == "Disease A"]["Diet"].values[0]
-    st.write("Description:", description)
-    st.write("Precautions:", precaution)
-    st.write("Diet:", diet)
-    workout_plan = workout[workout["Disease"] == "Disease A"]["Workout"].values[0]
-    st.write("Workout Plan:", workout_plan)
-else:
-    st.write("Prediction: You might have Disease B.")
-    description = descriptions_data[descriptions_data["Disease"] == "Disease B"]["Description"].values[0]
-    precaution = precautions_data[precautions_data["Disease"] == "Disease B"]["Precaution"].values[0]
-    diet = diets_data[diets_data["Disease"] == "Disease B"]["Diet"].values[0]
-    st.write("Description:", description)
-    st.write("Precautions:", precaution)
-    st.write("Diet:", diet)
-    workout_plan = workout[workout["Disease"] == "Disease B"]["Workout"].values[0]
-    st.write("Workout Plan:", workout_plan)
+if st.button("Predict"):
+    predicted_disease = model.predict([symptom_vector])[0]
+    st.success(f"The predicted disease is: {predicted_disease}")
+    
+    # Display additional information
+    description, precautions, diet, workout = helper(predicted_disease)
+    
+    st.subheader("Description")
+    st.write(description)
+    
+    st.subheader("Precautions")
+    for i, pre in enumerate(precautions, start=1):
+        st.write(f"{i}. {pre}")
+    
+    st.subheader("Diet")
+    st.write(diet)
+    
+    st.subheader("Workout Plan")
+    st.write(workout)
 
 
 
