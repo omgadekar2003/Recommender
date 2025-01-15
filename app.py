@@ -265,8 +265,16 @@ def display_recommender():
 def display_about():
     st.title("About Us")
     
-    # Display the image
-    st.image("IMG_20241109_133237.jpg", caption="Om Gadekar", use_column_width=True)
+    # Display the image in a circular format using HTML
+    st.markdown(
+        """
+        <div style="display: flex; justify-content: center;">
+            <img src="IMG_20241109_133237.jpg" alt="Om Gadekar" 
+            style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
     
     st.write(
         """
@@ -287,6 +295,7 @@ def display_about():
         "<p style='color:gray; text-align:center;'>Powered by AI & Streamlit | Icons and Design by Om Gadekar</p>",
         unsafe_allow_html=True
     )
+
 
 
 
