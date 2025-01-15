@@ -16,7 +16,7 @@
 
 ## 🛠️ **Technologies Used**  
 
-- **Frontend**: [Streamlit](https://streamlit.io/)  
+- **Frontend**: [Streamlit]([https://streamlit.io/](https://well-vibe-health.streamlit.app/))  
 - **Backend**: Python  
 - **Libraries**:  
   - `pandas`: Data manipulation and analysis.  
