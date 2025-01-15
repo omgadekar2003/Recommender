@@ -238,8 +238,36 @@ def display_recommender():
     )
 
 # Function to display About Us page
+# def display_about():
+#     st.title("About Us")
+#     st.write(
+#         """
+#         **Developer**: Om Gadekar
+
+#         **GitHub**: [Om Gadekar GitHub](https://github.com/omgadekar2003/Recommender)
+        
+#         **LinkedIn**: [Om Gadekar LinkedIn](https://www.linkedin.com/in/om-haribhau-gadekar/)
+        
+#         **Instagram**: [Om Gadekar Instagram](https://www.instagram.com/_.__o_g__._/)
+
+#         Thank you for using **WellVibe Health**! Stay healthy and take care of your well-being.
+#         """
+#     )
+#     st.markdown("---")
+#     st.write("🔧 Developed by **Om Gadekar**")
+#     st.markdown(
+#         "<p style='color:gray; text-align:center;'>Powered by AI & Streamlit | Icons and Design by Om Gadekar</p>",
+#         unsafe_allow_html=True
+#     )
+
+
+# Function to display About Us page
 def display_about():
     st.title("About Us")
+    
+    # Display the image
+    st.image("IMG_20241109_133237.jpg", caption="Om Gadekar", use_column_width=True)
+    
     st.write(
         """
         **Developer**: Om Gadekar
@@ -259,6 +287,8 @@ def display_about():
         "<p style='color:gray; text-align:center;'>Powered by AI & Streamlit | Icons and Design by Om Gadekar</p>",
         unsafe_allow_html=True
     )
+
+
 
 # Main function that routes between pages
 def main():
