@@ -23,8 +23,8 @@ jobs:
       run: |
         docker build . \
           --file Dockerfile \
-          --tag omgadekar2003/recommender:latest
+          --tag omgadekar2003/medicine_predict:latest
 
     - name: Push Docker Image
       run: |
-        docker push omgadekar2003/recommender:latest
+        docker push omgadekar2003/medicine_predict:latest
