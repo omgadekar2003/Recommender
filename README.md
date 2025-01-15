@@ -90,7 +90,7 @@
 
 ## 📜 **License**  
 
-This project is licensed under the [MIT License](LICENSE).  
+This project is licensed under the [DIEMS License].  
 
 ---
 
@@ -105,10 +105,15 @@ We welcome contributions!
 
 ## 📬 **Contact**  
 
-📧 **Email**: yourname@example.com  
-🐦 **Twitter**: [@yourhandle](https://twitter.com/yourhandle)  
-🌐 **Website**: [yourwebsite.com](https://yourwebsite.com)  
+Developer: **Om Gadekar**
+📧 **Email**: omgadekar25@gmail.com  
+**github**: https://github.com/omgadekar2003/
 
---- 
+**GitHub**: [Om Gadekar GitHub](https://github.com/omgadekar2003/Recommender) 
+**LinkedIn**: [Om Gadekar LinkedIn](https://www.linkedin.com/in/om-haribhau-gadekar/) 
+**Instagram**: [Om Gadekar Instagram](https://www.instagram.com/_.__o_g__._/) 
 
-This design includes icons, proper sections, and structured information to make your **README.md** both functional and attractive.
+Thank you for using **WellVibe Health**! Stay healthy and take care of your well-being.
+        
+
+
