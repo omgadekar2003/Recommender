@@ -82,10 +82,8 @@
 
 ## 🖼️ **Preview**  
 
-![App Screenshot 1](path/to/screenshot1.png)  
-*Interactive Symptom Selector*  
-
-![App Screenshot 2](path/to/screenshot2.png)  
+![App Video 1](Untitled video - Made with Clipchamp.mp4)  
+*Interactive Symptom Selector*   
 *Disease Prediction and Recommendations*  
 
 ---
