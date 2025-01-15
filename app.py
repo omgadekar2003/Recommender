@@ -158,10 +158,16 @@ def get_predicted_value(patient_symptoms):
 # Function to display Home page
 def display_home():
     st.title("Welcome to WellVibe Health 🌟")
+    
+    video_file = open("Untitled video - Made with Clipchamp.mp4", "rb")
+    video_bytes = video_file.read()
+
+    st.video(video_bytes)
+    
     st.write(
         """
         **WellVibe Health** is an AI-powered health diagnostic tool designed to help individuals predict their possible health conditions based on their symptoms.
-        The system analyzes the symptoms provided by the user and suggests the most likely disease along with further details such as descriptions, medications, diets, and recommended workouts.
+        The system analyzes the symptoms provided by the user and suggests the most likely disease along with further details such as descriptions, medications, diets, and recommended workouts. 
         
         How it works:
         - Select your symptoms.
