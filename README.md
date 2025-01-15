@@ -1,98 +1,117 @@
 # Well Vibe Health MLOPS PRJECT
+ 🩺 ![App Logo](path/to/logo.png)  
 
-## Overview
+**An AI-Powered Symptom Checker and Health Advisor**  
 
-**Well Vibe Health** is a wellness and fitness tracking application designed to empower users to lead healthier lifestyles. The platform offers personalized insights, activity tracking, goal-setting, and health monitoring features, all in an intuitive and user-friendly interface.
+---
 
-## Features
+## 🌟 **Features**  
 
-- **Personalized Dashboard**: Tailored recommendations based on user input and preferences.
-- **Activity Tracking**: Monitor steps, exercise routines, and calories burned.
-- **Health Metrics**: Track vital health stats such as heart rate, sleep patterns, and hydration levels.
-- **Goal Setting**: Set and achieve fitness and wellness goals with real-time progress updates.
-- **Community Support**: Connect with like-minded individuals for motivation and tips.
-- **Insights and Reports**: Generate detailed weekly and monthly health reports.
-- **Integration**: Seamlessly sync data with wearables and fitness apps.
+- 🔍 **Symptom Prediction**: Predict possible diseases based on selected symptoms using a trained machine learning model.  
+- 📄 **Disease Details**: Get detailed descriptions of diseases for better understanding.  
+- 💊 **Medications & Precautions**: Receive personalized medications and precautionary advice.  
+- 🥗 **Dietary Recommendations**: Suggestions for a healthy diet to complement your condition.  
+- 🏋️ **Workout Guidance**: Tailored workout tips for better recovery.  
 
-## Technologies Used
+---
 
-- **Frontend**: React.js, HTML5, CSS3
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Cloud Services**: AWS for storage and deployment
-- **APIs**: OpenWeatherMap API for outdoor activity suggestions
-- **AI/ML**: TensorFlow for personalized recommendations
-- **Mobile Compatibility**: React Native for the mobile app version
+## 🛠️ **Technologies Used**  
 
-## Installation
+- **Frontend**: [Streamlit](https://streamlit.io/)  
+- **Backend**: Python  
+- **Libraries**:  
+  - `pandas`: Data manipulation and analysis.  
+  - `joblib`: Model loading and prediction.  
+  - `Streamlit` for UI/UX.  
 
-1. Clone the repository:
+---
+
+## 📂 **Project Structure**  
+
+```
+├── app/
+│   ├── main.py          # Streamlit app script.
+│   ├── assets/          # Images, icons, and other assets.
+│   ├── model/           # Machine learning models.
+│   ├── data/            # CSV and other data files.
+│   └── requirements.txt # Python dependencies.
+├── README.md            # Project documentation.
+└── LICENSE              # License file.
+```
+
+---
+
+## 🚀 **How to Run**  
+
+1. **Clone the Repository**:  
    ```bash
-   git clone https://github.com/yourusername/well-vibe-health.git
-   cd well-vibe-health
+   git clone https://github.com/username/repo-name.git
+   cd repo-name
    ```
 
-2. Install dependencies for the backend and frontend:
+2. **Install Dependencies**:  
    ```bash
-   # Backend
-   cd backend
-   npm install
-
-   # Frontend
-   cd ../frontend
-   npm install
+   pip install -r requirements.txt
    ```
 
-3. Configure environment variables:
-   - Create a `.env` file in the `backend` directory.
-   - Add the following keys:
-     ```
-     MONGO_URI=<your_mongo_database_uri>
-     JWT_SECRET=<your_jwt_secret>
-     API_KEY=<api_key_for_integrations>
-     ```
-
-4. Start the application:
+3. **Launch the App**:  
    ```bash
-   # Backend
-   cd backend
-   npm start
-
-   # Frontend
-   cd ../frontend
-   npm start
+   streamlit run app/main.py
    ```
 
-5. Access the application in your browser at `http://localhost:3000`.
+4. **Access the App**:  
+   Open your browser and navigate to `http://localhost:8501`.
 
-## Usage
+---
 
-1. **Sign Up or Log In** to create a profile.
-2. Input personal details for personalized insights.
-3. Start tracking daily activities and health metrics.
-4. Set fitness and wellness goals and monitor your progress.
-5. Explore the community section for tips and support.
-6. View detailed reports to assess and improve your health over time.
+## 🎨 **User Interface**  
 
-## Contributing
+### 🏠 Home Screen  
+- **Logo and Header**: Displays app branding and mission.  
+- **Symptom Selection**: Dropdown menus to select symptoms.  
 
-Contributions are welcome! To contribute:
+### 📋 Disease Prediction  
+- **Prediction Results**: Displays the most likely disease.  
+- **Descriptions**: Provides detailed disease information.  
 
-1. Fork the repository.
-2. Create a new branch for your feature:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add your message"
-   ```
-4. Push to your branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Open a Pull Request.
+### 📑 Recommendations  
+- **Medications**: Suggests treatments.  
+- **Precautions**: Lists steps to mitigate risks.  
+- **Diet and Workout**: Offers tailored advice for recovery.  
 
-## License
+---
 
-This project is licensed under the **DIEMS License**. 
+## 🖼️ **Preview**  
+
+![App Screenshot 1](path/to/screenshot1.png)  
+*Interactive Symptom Selector*  
+
+![App Screenshot 2](path/to/screenshot2.png)  
+*Disease Prediction and Recommendations*  
+
+---
+
+## 📜 **License**  
+
+This project is licensed under the [MIT License](LICENSE).  
+
+---
+
+## 🤝 **Contributing**  
+
+We welcome contributions!  
+- Fork the repository.  
+- Create a new branch (`feature/your-feature-name`).  
+- Commit your changes and create a pull request.  
+
+---
+
+## 📬 **Contact**  
+
+📧 **Email**: yourname@example.com  
+🐦 **Twitter**: [@yourhandle](https://twitter.com/yourhandle)  
+🌐 **Website**: [yourwebsite.com](https://yourwebsite.com)  
+
+--- 
+
+This design includes icons, proper sections, and structured information to make your **README.md** both functional and attractive.
