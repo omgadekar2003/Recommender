@@ -266,7 +266,7 @@ def display_about():
     st.title("About Us")
     
     # Display the image
-    st.image("IMG_20241109_133237.jpg", caption="Om Gadekar", use_column_width=True)
+    st.image("IMG_20241109_133237.jpg", caption="Om Gadekar", use_column_width=True, use_container_width=True)
     
     st.write(
         """
