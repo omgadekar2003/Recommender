@@ -246,9 +246,9 @@ def display_about():
 
         **GitHub**: [Om Gadekar GitHub](https://github.com/omgadekar2003/Recommender)
         
-        **LinkedIn**: [Om Gadekar LinkedIn](https://www.linkedin.com/in/om-gadekar-2424a1182/)
+        **LinkedIn**: [Om Gadekar LinkedIn](https://www.linkedin.com/in/om-haribhau-gadekar/)
         
-        **Instagram**: [Om Gadekar Instagram](https://www.instagram.com/_._o_g_._/)
+        **Instagram**: [Om Gadekar Instagram](https://www.instagram.com/_.__o_g__._/)
 
         Thank you for using **WellVibe Health**! Stay healthy and take care of your well-being.
         """
