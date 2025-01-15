@@ -1,5 +1,4 @@
-# Well Vibe Health MLOPS PRJECT
- 🩺 ![App Logo](path/to/logo.png)  
+# Well Vibe Health MLOPS PRJECT  🩺  
 
 **An AI-Powered Symptom Checker and Health Advisor**  
 
