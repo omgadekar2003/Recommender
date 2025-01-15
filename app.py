@@ -270,7 +270,7 @@ def display_about():
         """
         <div style="display: flex; justify-content: center;">
             <img src="IMG_20241109_133237.jpg" alt="Om Gadekar" 
-            style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;">
+            style="height: 30%; border-radius: 50%; object-fit: cover;">
         </div>
         """,
         unsafe_allow_html=True
